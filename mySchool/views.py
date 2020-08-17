@@ -31,3 +31,17 @@ def add_class(request):
         cursor.close()
         conn.close()
         return redirect('/all-class')
+
+
+def del_class(request):
+    # 删除班级
+    val = request.GET.get('nid')
+    import pymysql
+    conn = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='123456', db='my_school')
+    cursor = conn.cursor()
+    cursor.execute("delete from all_class where id = (%s)", [val, ])
+    conn.commit()
+    cursor.close()
+    conn.close()
+    return redirect('/all-class')
+

@@ -20,6 +20,7 @@ import mySchool.views as views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('all-class', views.all_class),
-    path('add-class', views.add_class)
+    path('add-class', views.add_class),
+    path('del-class', views.del_class)
 
 ]
