@@ -25,6 +25,7 @@
             <tr>
                 <td>{{ item.id }}</td>
                 <td>{{ item.title }}</td>
+                <td><a href="edit-class?nid={{ item.id }}">编辑</a></td>
                 <td><a href="del-class?nid={{ item.id }}">删除</a></td>
             </tr>
         {% endfor %}
