@@ -8,7 +8,7 @@ def all_class(request):
     if request.method == "GET":
         import pymysql
         conn = pymysql.connect(host="127.0.0.1", port=3306, user="root", passwd="123456", db="my_school")
-        cursor = conn.cursor()
+        cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)  # 括号内容 说明以字典方式获取数据
         cursor.execute("select * from all_class")
         result = cursor.fetchall()
         cursor.close()

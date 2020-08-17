@@ -12,6 +12,22 @@
 <div>
     <a href="add-class">添加</a>
 </div>
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>班级名称</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in msg %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.title }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {{ msg }}
 </body>
 </html>
